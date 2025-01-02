@@ -219,3 +219,16 @@
     REACT_APP_API_URL=<Your API Endpoint>
     REACT_APP_AUTH_KEY=<Your Auth Key>
     ```
+
+33. Environment-Specific Configurations
+
+    - Ensure configurations for different environments (e.g., development, staging, production) are well-documented and included in the `.env.example` file.
+    - Always test the application in the environment it is configured for before deployment.
+
+34. Documentation
+
+    - Maintain a `README.md` file that includes:
+      - Project setup instructions.
+      - How to configure environment variables.
+      - Testing and deployment guidelines.
+    - Update the documentation whenever new features or dependencies are added.
