@@ -117,3 +117,42 @@
     ```javascript
     const handleSearch = debounce(query => fetchResults(query), 300);
     ```
+
+18. Button and Link Behavior
+
+    - Disable buttons or links while performing actions (e.g., saving or submitting).
+    - Prevent multiple submissions by disabling the button immediately after the first click.
+    - Example:
+
+    ```javascript
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const handleSubmit = async () => {
+      setIsSubmitting(true);
+      await submitData();
+      setIsSubmitting(false);
+    };
+    ```
+
+19. Error Messages
+
+    - Show specific and actionable error messages instead of generic ones (e.g., “Email is required” instead of “Invalid input”).
+    - Use toast notifications or inline error indicators for better UX.
+
+20. Keyboard Navigation
+
+    - Ensure that interactive elements are focusable and usable with the keyboard (e.g., via the tab key).
+    - Add onKeyDown handlers for important actions to support Enter or Space key activation.
+
+21. Image Handling
+
+    - Always provide an alt attribute for images to ensure accessibility.
+    - Use a fallback image for broken or missing image URLs.
+    - Example:
+
+    ```javascript
+    <img
+      src={imageUrl || fallbackUrl}
+      alt='Profile'
+      onError={e => (e.target.src = fallbackUrl)}
+    />
+    ```
