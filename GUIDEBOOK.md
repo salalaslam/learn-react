@@ -77,3 +77,15 @@
 13. Console Logs
 
     - Always remove all console.log, console.error, and console.warn statements before finalizing and deploying the code. Use a logging library for controlled logs in development and production if needed.
+
+14. Cleanup Effects
+
+    - Ensure all subscriptions, event listeners, and intervals set in useEffect are cleaned up in the return function to prevent memory leaks.
+    - Example:
+
+    ```javascript
+    useEffect(() => {
+      const timer = setInterval(() => console.log('Running'), 1000);
+      return () => clearInterval(timer); // Cleanup
+    }, []);
+    ```
