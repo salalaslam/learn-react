@@ -98,3 +98,22 @@
     ```javascript
     <h1>{title || 'Default Title'}</h1>
     ```
+
+16. API Response Handling
+
+    - Validate and sanitize API responses to ensure they meet expected data structures before rendering.
+    - Use optional chaining (?.) to avoid runtime errors for undefined/null values.
+    - Example:
+
+    ```javascript
+    <p>{user?.name || 'Guest'}</p>
+    ```
+
+17. Event Handlers
+
+    - Always debounce expensive event handlers (e.g., scroll, resize, or input changes).
+    - Example using lodash.debounce:
+
+    ```javascript
+    const handleSearch = debounce(query => fetchResults(query), 300);
+    ```
