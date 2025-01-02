@@ -180,3 +180,29 @@
       fetchData();
     }, [dependency]); // Add all required dependencies here
     ```
+
+26. Testing Before Deployment
+
+    - Test the component in all target browsers and screen sizes (mobile, tablet, desktop).
+    - Verify behavior with no or slow internet connections to check for fallback states.
+    - Simulate user interactions to ensure proper state updates and validations.
+
+27. Loading States
+
+    - Always show a **loading spinner** or skeleton while waiting for data to load. Never leave the UI blank or unresponsive.
+
+28. Avoid Inline Styles
+
+    - Use CSS modules or styled-components for maintainable and reusable styles instead of inline styles.
+
+29. Avoid Using Index as Key
+
+    - Use unique identifiers as `key` in lists to avoid rendering issues and bugs.
+
+30. Error Monitoring
+
+    - Integrate an error tracking tool (e.g., Sentry) to capture errors in production for debugging and monitoring.
+
+31. Mobile Responsiveness
+
+    - Always test for mobile responsiveness. Use flexible layouts (`flexbox`, `grid`) and media queries to adapt to different screen sizes.
