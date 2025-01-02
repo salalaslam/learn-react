@@ -89,3 +89,12 @@
       return () => clearInterval(timer); // Cleanup
     }, []);
     ```
+
+15. Default Fallbacks
+
+    - Always provide fallback content for dynamic data (e.g., default values, loading placeholders).
+    - Example:
+
+    ```javascript
+    <h1>{title || 'Default Title'}</h1>
+    ```
