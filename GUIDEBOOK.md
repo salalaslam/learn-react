@@ -13,3 +13,9 @@
     - Handle errors gracefully and display meaningful messages to the user (e.g., “Failed to load, please try again”).
     - Use try-catch for async operations and wrap API calls in reusable utility functions.
     - Cancel or debounce API calls on user input to prevent excessive requests (e.g., in search functionality).
+
+3.  Button States
+
+    - Disable buttons while a task is in progress (e.g., a form is submitting or data is loading).
+    - Use aria-busy attributes for accessibility during loading states.
+    - Change button text to indicate action progress (e.g., "Saving..." or "Loading...").
