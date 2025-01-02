@@ -19,3 +19,9 @@
     - Disable buttons while a task is in progress (e.g., a form is submitting or data is loading).
     - Use aria-busy attributes for accessibility during loading states.
     - Change button text to indicate action progress (e.g., "Saving..." or "Loading...").
+
+4.  Rendering and Data Display
+
+    - Always check for null, undefined, or empty states before rendering data (e.g., data && data.length > 0).
+    - Show fallback UIs for empty or error states (e.g., “No results found” or “Something went wrong”).
+    - Use key props correctly in lists to avoid rendering issues (e.g., use unique IDs, not indices).
