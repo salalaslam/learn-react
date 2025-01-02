@@ -264,3 +264,107 @@
       - Change to "Copied!" when the user clicks the copy button.
       - Revert back to "Copy" after a few seconds.
     - Use a state variable to manage the tooltip content dynamically.
+
+37. Naming Conventions
+
+    - Consistent naming improves code readability and maintainability. Follow these naming conventions for variables, functions, and components:
+
+    **Variables and Constants**
+
+    - Use camelCase for variables and function names.
+      - Example:
+      ```javascript
+      const userName = 'JohnDoe';
+      const isLoggedIn = true;
+      ```
+    - Use UPPER_SNAKE_CASE for constants.
+      - Example:
+      ```javascript
+      const API_URL = 'https://api.example.com';
+      ```
+
+    **Functions**
+
+    - Use camelCase for function names. Start the name with a verb to indicate its action or purpose.
+      - Example:
+      ```javascript
+      const fetchData = async () => {
+        /* Logic here */
+      };
+      const handleClick = () => {
+        /* Logic here */
+      };
+      ```
+
+    **Components**
+
+    - Use PascalCase for React component names. Each word should start with an uppercase letter.
+      - Example:
+      ```javascript
+      const UserProfile = () => {
+        return <div>Profile Component</div>;
+      };
+      export default UserProfile;
+      ```
+
+    **Files and Folders**
+
+    - Use PascalCase for component file names to match the component's name.
+      - Example:
+      ```plaintext
+      File name: UserProfile.jsx
+      Folder structure:
+      src/
+      ├── components/
+      │   └── UserProfile/
+      │       ├── UserProfile.jsx
+      │       └── UserProfile.css
+      ```
+    - Use kebab-case for non-component files or folders (e.g., utility files, assets).
+      - Example:
+      ```plaintext
+      File name: user-profile-utils.js
+      ```
+
+    **Event Handlers and Props**
+
+    - Prefix event handlers with "handle" and props with "on" to indicate their purpose.
+      - Example:
+      ```javascript
+      const handleButtonClick = () => {
+        /* Logic here */
+      };
+      <Button onClick={handleButtonClick} />;
+      ```
+
+    **Interfaces and Types (if using TypeScript)**
+
+    - Use PascalCase for interfaces and types. Prefix interfaces with "I" or use descriptive names.
+
+      - Example:
+
+      ```typescript
+      interface IUser {
+        id: number;
+        name: string;
+      }
+
+      type UserRole = 'admin' | 'user' | 'guest';
+      ```
+
+    **Avoid Ambiguity**
+
+    - Avoid using single letters (e.g., x, y) except for loop indices or mathematical contexts.
+    - Use descriptive names to indicate purpose and context.
+      - Good Example:
+      ```javascript
+      const fetchUserData = async () => {
+        /* Logic */
+      };
+      ```
+      - Bad Example:
+      ```javascript
+      const fetch = async () => {
+        /* Logic */
+      };
+      ```
