@@ -232,3 +232,35 @@
       - How to configure environment variables.
       - Testing and deployment guidelines.
     - Update the documentation whenever new features or dependencies are added.
+
+35. Timestamp Handling
+
+    - Always convert timestamps (including time only) to UTC when saving to ensure consistency across different time zones.
+    - Convert timestamps to the local timezone when reading for display purposes, ensuring the user sees time relevant to their location.
+    - Use libraries like `date-fns`, `moment`, or `Intl.DateTimeFormat` for robust timezone conversions and formatting.
+    - Example for saving to UTC:
+
+    ```javascript
+    const saveTimestamp = localTime => {
+      const utcTime = new Date(localTime).toISOString();
+      return utcTime;
+    };
+    ```
+
+    - Example for converting to local:
+
+    ```javascript
+    const readTimestamp = utcTime => {
+      const localTime = new Date(utcTime).toLocaleString();
+      return localTime;
+    };
+    ```
+
+36. Copy to Clipboard
+
+    - Always include a tooltip for any "copy to clipboard" functionality.
+    - The tooltip should:
+      - Display "Copy" by default.
+      - Change to "Copied!" when the user clicks the copy button.
+      - Revert back to "Copy" after a few seconds.
+    - Use a state variable to manage the tooltip content dynamically.
