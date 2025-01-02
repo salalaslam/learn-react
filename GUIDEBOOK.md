@@ -206,3 +206,16 @@
 31. Mobile Responsiveness
 
     - Always test for mobile responsiveness. Use flexible layouts (`flexbox`, `grid`) and media queries to adapt to different screen sizes.
+
+32. Environment Variables
+
+    - Include an `.env.example` file in all React.js and Nest.js repositories to list all required environment variables for the project.
+    - Ensure the `.env.example` file is always up-to-date with accurate and descriptive placeholders (e.g., `API_URL=<Your API Endpoint>`).
+    - Never commit actual `.env` files or sensitive information into version control. Add `.env` to `.gitignore`.
+    - Validate that all required environment variables are present at runtime using libraries like `dotenv-safe`.
+    - Example `.env.example` file:
+
+    ```plaintext
+    REACT_APP_API_URL=<Your API Endpoint>
+    REACT_APP_AUTH_KEY=<Your Auth Key>
+    ```
