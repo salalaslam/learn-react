@@ -70,7 +70,6 @@
 
 12. Tooltips and Hints
 
-    - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
     - Show tooltips or hints for non-obvious actions.
     - Example for "copy to clipboard" functionality:
       - Display "Copy" by default.
@@ -372,6 +371,10 @@
         /* Logic */
       };
       ```
+
+38. Security Practices
+
+    - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
 
 ---
 
