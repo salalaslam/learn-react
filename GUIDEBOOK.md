@@ -368,3 +368,7 @@
         /* Logic */
       };
       ```
+
+---
+
+_Disclaimer: This document is solely prepared for the frontend React.js team of Invotyx._
