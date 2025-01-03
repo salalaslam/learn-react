@@ -230,7 +230,8 @@ REACT_APP_AUTH_KEY=<Your Auth Key>
 
 - Always convert timestamps (including time only) to UTC when saving to ensure consistency across different time zones.
 - Convert timestamps to the local timezone when reading for display purposes, ensuring the user sees time relevant to their location.
-- Use libraries like `date-fns`, `moment`, or `Intl.DateTimeFormat` for robust timezone conversions and formatting.
+- Use libraries like `date-fns`, `dayjs`, or `Intl.DateTimeFormat` for robust timezone conversions and formatting.
+- **Avoid using Moment.js** as it is bulky and in maintenance mode only. Prefer using `date-fns`, `dayjs` or `Intl.DateTimeFormat`.
 - Example for saving to UTC:
 
 ```javascript
