@@ -132,7 +132,7 @@
     const handleSubmit = async () => {
       setIsSubmitting(true);
       await submitData();
-      setIsSubmitting false);
+      setIsSubmitting(false);
     };
     ```
 
