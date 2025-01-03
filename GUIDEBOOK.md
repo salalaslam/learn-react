@@ -121,20 +121,9 @@
     const handleSearch = debounce(query => fetchResults(query), 300);
     ```
 
-18. [Button and Link Behavior](#button-and-link-behavior)
+18. [Security Practices](#security-practices)
 
-    - Disable buttons or links while performing actions (e.g., saving or submitting).
-    - Prevent multiple submissions by disabling the button immediately after the first click.
-    - Example:
-
-    ```javascript
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const handleSubmit = async () => {
-      setIsSubmitting(true);
-      await submitData();
-      setIsSubmitting(false);
-    };
-    ```
+    - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
 
 19. [Error Messages](#error-messages)
 
@@ -371,10 +360,6 @@
         /* Logic */
       };
       ```
-
-38. [Security Practices](#security-practices)
-
-    - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
 
 ---
 
