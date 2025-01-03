@@ -371,4 +371,4 @@
 
 ---
 
-_Disclaimer: This document is solely prepared for the frontend React.js team of Invotyx._
+_Disclaimer: This document is prepared for the frontend React.js team of Invotyx. These conventions might not be relevant for all._
