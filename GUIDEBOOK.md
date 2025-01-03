@@ -271,7 +271,7 @@
 
 37. Naming Conventions
 
-    - Consistent naming improves code readability and maintainability. Follow these naming conventions for variables, functions, and components:
+    - Consistent naming improves code readability and maintainability. Follow these naming conventions for variables, functions, and components.
 
     **Variables and Constants**
 
