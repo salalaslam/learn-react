@@ -68,11 +68,15 @@
     - Reset forms or component states after successful actions (e.g., clear input after submitting).
     - Use `useReducer` for complex state logic.
 
-12. Miscellaneous Tips
+12. Tooltips and Hints
 
     - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
     - Show tooltips or hints for non-obvious actions.
-    - Test components for responsiveness using developer tools or frameworks like Tailwind.
+    - Example for "copy to clipboard" functionality:
+      - Display "Copy" by default.
+      - Change to "Copied!" when the user clicks the copy button.
+      - Revert back to "Copy" after a few seconds.
+      - Use a state variable to manage the tooltip content dynamically.
 
 13. Console Logs
 
