@@ -62,6 +62,7 @@
 - Use constants for repetitive strings or values to avoid typos.
 - Avoid hardcoded styles in JSX; use CSS classes or inline styles via objects.
 - Always confirm all delete or important actions with the user to prevent accidental data loss or unintended actions. Use modal dialogs or confirmation prompts.
+- Regularly check for spelling errors. Utilize an extension like [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) for assistance.
 
 ## State Management
 
