@@ -156,10 +156,6 @@ const handleSearch = debounce(query => fetchResults(query), 300);
 - Add comments for complex logic, especially for code that might not be intuitive at first glance.
 - Avoid excessive comments; the code should be self-explanatory where possible.
 
-## Component Unmounting
-
-- Handle cleanup logic properly in `useEffect` or component lifecycle methods to prevent unintended behaviors.
-
 ## Avoid Hardcoding
 
 - Replace hardcoded strings, numbers, or configurations with constants or environment variables.
