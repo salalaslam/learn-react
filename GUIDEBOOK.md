@@ -125,6 +125,17 @@ const handleSearch = debounce(query => fetchResults(query), 300);
 ## Security Practices
 
 - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
+- Use Content Security Policy (CSP) to prevent cross-site scripting (XSS) attacks.
+- Avoid using `eval()` and other similar functions that execute code from strings.
+- Use HTTPS to encrypt data in transit.
+- Implement proper authentication and authorization checks.
+- Regularly update dependencies to patch known vulnerabilities.
+- Use security linters and tools (e.g., ESLint plugins, Snyk) to identify and fix security issues.
+- Store sensitive information (e.g., tokens) securely and avoid exposing them in the frontend code.
+- Validate and sanitize API responses to prevent injection attacks.
+- Use environment variables for configuration and secrets, and never hardcode them in the codebase.
+- Implement rate limiting and throttling to prevent abuse of APIs.
+- Ensure proper error handling to avoid exposing stack traces or sensitive information.
 
 ## Error Messages
 
