@@ -60,7 +60,6 @@
 
 - Always destructure props and state for readability.
 - Use constants for repetitive strings or values to avoid typos.
-- Avoid hardcoded styles in JSX; use CSS classes or inline styles via objects.
 - Always confirm all delete or important actions with the user to prevent accidental data loss or unintended actions. Use modal dialogs or confirmation prompts.
 - Regularly check for spelling errors. Utilize an extension like [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) for assistance.
 
@@ -159,6 +158,7 @@ const handleSearch = debounce(query => fetchResults(query), 300);
 ## Avoid Hardcoding
 
 - Replace hardcoded strings, numbers, or configurations with constants or environment variables.
+- Avoid hardcoded styles in JSX; use CSS classes or inline styles via objects.
 
 ## Dependencies
 
