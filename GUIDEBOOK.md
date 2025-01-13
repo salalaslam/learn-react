@@ -382,6 +382,25 @@ const readTimestamp = utcTime => {
   };
   ```
 
+## Improving Performance in React Components
+
+- Use `React.memo` or `PureComponent` to avoid unnecessary re-renders.
+- Memoize heavy computations or expensive function calls (e.g., using `useMemo`).
+- Prefetch data or code-split components that are not immediately needed.
+- Avoid creating inline functions within JSX where possible (define them outside or use `useCallback`).
+- Use virtualization for large lists (e.g., `react-window` or `react-virtualized`).
+- Only load necessary dependencies or assets for each route (code splitting).
+- Make sure to keep component state minimal to reduce re-renders.
+
+## General Performance
+
+- Serve static assets over a CDN to reduce latency.
+- Enable compression (e.g., GZIP or Brotli) at the server level.
+- Optimize and compress images to reduce overall load times.
+- Minify and bundle JavaScript and CSS files.
+- Use caching headers (e.g., Cache-Control) to leverage browser caching.
+- Lazy load non-critical resources to reduce initial load.
+
 ---
 
 _Disclaimer: This document is prepared for the frontend React.js team of Invotyx. These conventions might not be relevant for all._
