@@ -1,75 +1,77 @@
 # Guidelines for Developing Robust React.js Components
 
-## Forms and Input Handling
+## Chapter 1: Mandatory Practices
+
+### Forms and Input Handling
 
 - Always disable the form submit button and show a loader while an HTTP request is in progress to prevent duplicate submissions.
 - Validate user input on blur and/or on submit, providing clear and actionable error messages.
 - Use controlled components (`value` and `onChange`) for inputs to manage state effectively.
 - Set default values for forms to prevent uncontrolled behavior.
 
-## HTTP Requests
+### HTTP Requests
 
 - Show a loading spinner or skeleton screen while fetching data.
 - Handle errors gracefully and display meaningful messages to the user (e.g., “Failed to load, please try again”).
 - Use `try-catch` for async operations and wrap API calls in reusable utility functions.
 - Cancel or debounce API calls on user input to prevent excessive requests (e.g., in search functionality).
 
-## Button States
+### Button States
 
 - Disable buttons while a task is in progress (e.g., a form is submitting or data is loading).
 - Use `aria-busy` attributes for accessibility during loading states.
 - Change button text to indicate action progress (e.g., "Saving..." or "Loading...").
 
-## Rendering and Data Display
+### Rendering and Data Display
 
 - Always check for **null, undefined, or empty states** before rendering data (e.g., `data && data.length > 0`).
 - Show fallback UIs for empty or error states (e.g., “No results found” or “Something went wrong”).
 - Use `key` props correctly in lists to avoid rendering issues (e.g., use unique IDs, not indices).
 
-## CSS and Styling
+### CSS and Styling
 
 - Add **hover, focus, and active states** for interactive elements (e.g., buttons, links).
 - Use `cursor: not-allowed` for disabled buttons to improve user feedback.
 - Ensure text is readable with proper contrast ratios (use a contrast checker tool).
 
-## Error Handling
+### Error Handling
 
 - Always wrap components that can fail with **error boundaries** or a custom error UI.
 - Handle promise rejections in API calls and show user-friendly messages.
 - Log errors to the console or send them to a monitoring tool (e.g., Sentry).
 
-## Accessibility (a11y)
+### Accessibility (a11y)
 
 - Use semantic HTML (`<button>`, `<label>`, `<main>`, etc.) to ensure proper navigation for screen readers.
 - Add `aria-label` attributes to buttons, links, and icons without visible text.
 - Ensure keyboard navigation works seamlessly (e.g., tab order, Enter/Space to activate buttons).
 
-## Component Behavior
+### Component Behavior
 
 - Use `React.memo` for components that don't need to re-render on every state change.
 - Avoid inline functions in `render` methods to prevent unnecessary renders.
 - Clean up side effects using `useEffect` cleanup functions (e.g., clearing timers, unsubscribing).
 
-## Events and Interactions
+### Events and Interactions
 
 - Prevent default form submissions with `event.preventDefault()` in custom handlers.
 - Add debounce or throttle for frequent events like `scroll`, `resize`, or `input` changes.
 - Provide feedback for user actions (e.g., “Item added to cart” toast notification).
 
-## Code Practices
+### Code Practices
 
 - Always destructure props and state for readability.
 - Use constants for repetitive strings or values to avoid typos.
 - Always confirm all delete or important actions with the user to prevent accidental data loss or unintended actions. Use modal dialogs or confirmation prompts.
 - Regularly check for spelling errors. Utilize an extension like [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) for assistance.
 
-## State Management
+### State Management
 
 - Keep local state minimal; avoid duplicating global state in local state.
 - Reset forms or component states after successful actions (e.g., clear input after submitting).
 - Use `useReducer` for complex state logic.
 
-## Tooltips and Hints
+### Tooltips and Hints
 
 - Show tooltips or hints for non-obvious actions.
 - Example for "copy to clipboard" functionality:
@@ -78,11 +80,11 @@
   - Revert back to "Copy" after a few seconds.
   - Use a state variable to manage the tooltip content dynamically.
 
-## Console Logs
+### Console Logs
 
 - Always remove all `console.log`, `console.error`, and `console.warn` statements before finalizing and deploying the code. Use a logging library for controlled logs in development and production if needed.
 
-## Cleanup Effects
+### Cleanup Effects
 
 - Ensure all subscriptions, event listeners, and intervals set in `useEffect` are **cleaned up** in the return function to prevent memory leaks.
 - Example:
@@ -94,7 +96,7 @@ useEffect(() => {
 }, []);
 ```
 
-## Default Fallbacks
+### Default Fallbacks
 
 - Always provide **fallback content** for dynamic data (e.g., `default` `values`, `loading placeholders`).
 - Example:
@@ -103,7 +105,7 @@ useEffect(() => {
 <h1>{title || 'Default Title'}</h1>
 ```
 
-## API Response Handling
+### API Response Handling
 
 - Validate and sanitize API responses to ensure they meet expected data structures before rendering.
 - Use optional chaining (`?.`) to avoid runtime errors for undefined/null values.
@@ -113,7 +115,7 @@ useEffect(() => {
 <p>{user?.name || 'Guest'}</p>
 ```
 
-## Event Handlers
+### Event Handlers
 
 - Always debounce expensive event handlers (e.g., `scroll`, `resize`, or `input` changes).
 - Example using `lodash.debounce`:
@@ -122,7 +124,7 @@ useEffect(() => {
 const handleSearch = debounce(query => fetchResults(query), 300);
 ```
 
-## Security Practices
+### Security Practices
 
 - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
 - Use Content Security Policy (CSP) to prevent cross-site scripting (XSS) attacks.
@@ -148,17 +150,19 @@ const handleSearch = debounce(query => fetchResults(query), 300);
   - Perform regular security assessments and penetration testing to identify and mitigate vulnerabilities.
   - Use multi-factor authentication (MFA) for accessing sensitive parts of the application.
 
-## Error Messages
+## Chapter 2: Recommended Practices
+
+### Error Messages
 
 - Show **specific and actionable error messages** instead of generic ones (e.g., “Email is required” instead of “Invalid input”).
 - Use toast notifications or inline error indicators for better UX.
 
-## Keyboard Navigation
+### Keyboard Navigation
 
 - Ensure that interactive elements are focusable and usable with the keyboard (e.g., via the `tab` key).
 - Add `onKeyDown` handlers for important actions to support Enter or Space key activation.
 
-## Image Handling
+### Image Handling
 
 - Always provide an `alt` attribute for images to ensure accessibility.
 - Use a fallback image for broken or missing image URLs.
@@ -172,17 +176,17 @@ const handleSearch = debounce(query => fetchResults(query), 300);
 />
 ```
 
-## Code Comments
+### Code Comments
 
 - Add comments for complex logic, especially for code that might not be intuitive at first glance.
 - Avoid excessive comments; the code should be self-explanatory where possible.
 
-## Avoid Hardcoding
+### Avoid Hardcoding
 
 - Replace hardcoded strings, numbers, or configurations with constants or environment variables.
 - Avoid hardcoded styles in JSX; use CSS classes or inline styles via objects.
 
-## Dependencies
+### Dependencies
 
 - Keep an eye on the **dependencies array** in `useEffect` to prevent unnecessary or missing updates.
 - Example:
@@ -193,33 +197,33 @@ useEffect(() => {
 }, [dependency]); // Add all required dependencies here
 ```
 
-## Testing Before Deployment
+### Testing Before Deployment
 
 - Test the component in all target browsers and screen sizes (mobile, tablet, desktop).
 - Verify behavior with no or slow internet connections to check for fallback states.
 - Simulate user interactions to ensure proper state updates and validations.
 
-## Loading States
+### Loading States
 
 - Always show a **loading spinner** or skeleton while waiting for data to load. Never leave the UI blank or unresponsive.
 
-## Avoid Inline Styles
+### Avoid Inline Styles
 
 - Use CSS modules or styled-components for maintainable and reusable styles instead of inline styles.
 
-## Avoid Using Index as Key
+### Avoid Using Index as Key
 
 - Use unique identifiers as `key` in lists to avoid rendering issues and bugs.
 
-## Error Monitoring
+### Error Monitoring
 
 - Integrate an error tracking tool (e.g., Sentry) to capture errors in production for debugging and monitoring.
 
-## Mobile Responsiveness
+### Mobile Responsiveness
 
 - Always test for mobile responsiveness. Use flexible layouts (`flexbox`, `grid`) and media queries to adapt to different screen sizes.
 
-## Environment Variables
+### Environment Variables
 
 - Include an `.env.example` file in all React.js and Nest.js repositories to list all required environment variables for the project.
 - Ensure the `.env.example` file is always up-to-date with accurate and descriptive placeholders (e.g., `API_URL=<Your API Endpoint>`).
@@ -232,12 +236,12 @@ REACT_APP_API_URL=<Your API Endpoint>
 REACT_APP_AUTH_KEY=<Your Auth Key>
 ```
 
-## Environment-Specific Configurations
+### Environment-Specific Configurations
 
 - Ensure configurations for different environments (e.g., development, staging, production) are well-documented and included in the `.env.example` file.
 - Always test the application in the environment it is configured for before deployment.
 
-## Documentation
+### Documentation
 
 - Maintain a `README.md` file that includes:
   - Project setup instructions.
@@ -245,7 +249,7 @@ REACT_APP_AUTH_KEY=<Your Auth Key>
   - Testing and deployment guidelines.
 - Update the documentation whenever new features or dependencies are added.
 
-## Timestamp Handling
+### Timestamp Handling
 
 - Always convert timestamps (including time only) to UTC when saving to ensure consistency across different time zones.
 - Convert timestamps to the local timezone when reading for display purposes, ensuring the user sees time relevant to their location.
@@ -269,7 +273,7 @@ const readTimestamp = utcTime => {
 };
 ```
 
-## Copy to Clipboard
+### Copy to Clipboard
 
 - Always include a tooltip for any "copy to clipboard" functionality.
 - The tooltip should:
@@ -278,11 +282,11 @@ const readTimestamp = utcTime => {
   - Revert back to "Copy" after a few seconds.
 - Use a state variable to manage the tooltip content dynamically.
 
-## Naming Conventions
+### Naming Conventions
 
 - Consistent naming improves code readability and maintainability. Follow these naming conventions for variables, functions, and components.
 
-### Variables and Constants
+#### Variables and Constants
 
 - Use camelCase for variables and function names.
   - Example:
@@ -296,7 +300,7 @@ const readTimestamp = utcTime => {
   const API_URL = 'https://api.example.com';
   ```
 
-### Functions
+#### Functions
 
 - Use camelCase for function names. Start the name with a verb to indicate its action or purpose.
   - Example:
@@ -309,7 +313,7 @@ const readTimestamp = utcTime => {
   };
   ```
 
-### Components
+#### Components
 
 - Use PascalCase for React component names. Each word should start with an uppercase letter.
   - Example:
@@ -320,7 +324,7 @@ const readTimestamp = utcTime => {
   export default UserProfile;
   ```
 
-### Files and Folders
+#### Files and Folders
 
 - Use PascalCase for component file names to match the component's name.
   - Example:
@@ -339,7 +343,7 @@ const readTimestamp = utcTime => {
   File name: user-profile-utils.js
   ```
 
-### Event Handlers and Props
+#### Event Handlers and Props
 
 - Prefix event handlers with "handle" and props with "on" to indicate their purpose.
   - Example:
@@ -350,7 +354,7 @@ const readTimestamp = utcTime => {
   <Button onClick={handleButtonClick} />;
   ```
 
-### Interfaces and Types (if using TypeScript)
+#### Interfaces and Types (if using TypeScript)
 
 - Use PascalCase for interfaces and types. Prefix interfaces with "I" or use descriptive names.
 
@@ -365,7 +369,7 @@ const readTimestamp = utcTime => {
   type UserRole = 'admin' | 'user' | 'guest';
   ```
 
-### Avoid Ambiguity
+#### Avoid Ambiguity
 
 - Avoid using single letters (e.g., x, y) except for loop indices or mathematical contexts.
 - Use descriptive names to indicate purpose and context.
@@ -382,7 +386,9 @@ const readTimestamp = utcTime => {
   };
   ```
 
-## Improving Performance in React Components
+## Chapter 3: Advanced Practices
+
+### Improving Performance in React Components
 
 - Use `React.memo` or `PureComponent` to avoid unnecessary re-renders.
 - Memoize heavy computations or expensive function calls (e.g., using `useMemo`).
@@ -392,7 +398,7 @@ const readTimestamp = utcTime => {
 - Only load necessary dependencies or assets for each route (code splitting).
 - Make sure to keep component state minimal to reduce re-renders.
 
-## General Performance
+### General Performance
 
 - Serve static assets over a CDN to reduce latency.
 - Enable compression (e.g., GZIP or Brotli) at the server level.
