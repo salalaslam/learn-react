@@ -146,7 +146,7 @@ const handleSearch = debounce(query => fetchResults(query), 300);
   - Use secure coding practices to prevent common vulnerabilities such as SQL injection, XSS, and CSRF.
   - Ensure secure session management by using HttpOnly and Secure cookies.
   - Monitor and log security events to detect and respond to potential security incidents.
-  - Conduct regular security training and awareness programs for developers.
+  - ~~Conduct regular security training and awareness programs for developers.~~
   - Perform regular security assessments and penetration testing to identify and mitigate vulnerabilities.
   - Use multi-factor authentication (MFA) for accessing sensitive parts of the application.
 
@@ -356,7 +356,7 @@ const readTimestamp = utcTime => {
 
 #### Interfaces and Types (if using TypeScript)
 
-- Use PascalCase for interfaces and types. Prefix interfaces with "I" or use descriptive names.
+- Use PascalCase for interfaces and types. ~~Prefix interfaces with "I" or~~ use descriptive names.
 
   - Example:
 
