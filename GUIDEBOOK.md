@@ -386,6 +386,38 @@ const readTimestamp = utcTime => {
   };
   ```
 
+### Translation and Internationalization (i18n)
+
+- Always write React components that are translation-ready.
+- Use a translation management library or framework to handle translations.
+- Avoid hardcoding strings directly in the components; use translation keys instead.
+- Example:
+
+```javascript
+const MyComponent = ({ t }) => {
+  return <h1>{t('welcome_message')}</h1>;
+};
+
+export default MyComponent;
+```
+
+- Ensure all user-facing text is included in the translation files.
+- Regularly update and maintain translation files for all supported languages.
+- Use placeholders and interpolation for dynamic values in translations.
+- Example:
+
+```javascript
+// en.json
+{
+  "welcome_message": "Welcome, {{name}}!"
+}
+
+// Component
+const MyComponent = ({ t, name }) => {
+  return <h1>{t('welcome_message', { name })}</h1>;
+};
+```
+
 ## Chapter 3: Advanced Practices
 
 ### Improving Performance in React Components
