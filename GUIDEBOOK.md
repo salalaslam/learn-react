@@ -64,6 +64,12 @@
 - Use constants for repetitive strings or values to avoid typos.
 - Always confirm all delete or important actions with the user to prevent accidental data loss or unintended actions. Use modal dialogs or confirmation prompts.
 - Regularly check for spelling errors. Utilize an extension like [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) for assistance.
+- Always wrap the `||` operator in parentheses when using with the ternary operator to ensure correct evaluation order and readability. This helps to avoid issues with operator precedence, where the `||` operator might be evaluated before the ternary operator.
+- Example:
+
+```javascript
+{(status === 'pending' || status === 'approved') ? <case1 /> : <case2 />}
+```
 
 ### State Management
 
