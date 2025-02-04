@@ -71,6 +71,19 @@
 {(status === 'pending' || status === 'approved') ? <case1 /> : <case2 />}
 ```
 
+- Always round decimals to two places for consistency and readability.
+- Example:
+
+```javascript
+const roundToTwoPlaces = num => {
+  return Math.round(num * 100) / 100;
+};
+
+// Usage
+const price = 12.3456;
+console.log(roundToTwoPlaces(price)); // Output: 12.35
+```
+
 ### State Management
 
 - Keep local state minimal; avoid duplicating global state in local state.
