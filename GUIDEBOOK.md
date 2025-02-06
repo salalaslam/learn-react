@@ -457,6 +457,9 @@ const MyComponent = ({ t, name }) => {
 - Memoize heavy computations or expensive function calls (e.g., using `useMemo`).
 - Prefetch data or code-split components that are not immediately needed.
 - Avoid creating inline functions within JSX where possible (define them outside or use `useCallback`).
+
+### Virtualization
+
 - Use virtualization for large lists (e.g., `react-window` or `react-virtualized`).
 
 ### Code Splitting
