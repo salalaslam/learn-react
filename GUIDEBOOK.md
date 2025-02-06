@@ -60,6 +60,9 @@
 ### Spell Check
 
 - Regularly check for spelling errors. Utilize an extension like [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) for assistance.
+
+### OR Operator with Ternary Operator
+
 - Always wrap the `||` operator in parentheses when using with the ternary operator to ensure correct evaluation order and readability. This helps to avoid issues with operator precedence, where the `||` operator might be evaluated before the ternary operator.
 - Example:
 
