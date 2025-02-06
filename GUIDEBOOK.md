@@ -158,11 +158,6 @@ const handleSearch = debounce(query => fetchResults(query), 300);
 - Show **specific and actionable error messages** instead of generic ones (e.g., “Email is required” instead of “Invalid input”).
 - Use toast notifications or inline error indicators for better UX.
 
-### Keyboard Navigation
-
-- Ensure that interactive elements are focusable and usable with the keyboard (e.g., via the `tab` key).
-- Add `onKeyDown` handlers for important actions to support Enter or Space key activation.
-
 ### Image Handling
 
 - Always provide an `alt` attribute for images to ensure accessibility.
@@ -437,6 +432,11 @@ const MyComponent = ({ t, name }) => {
 - Use semantic HTML (`<button>`, `<label>`, `<main>`, etc.) to ensure proper navigation for screen readers.
 - Add `aria-label` attributes to buttons, links, and icons without visible text.
 - Ensure keyboard navigation works seamlessly (e.g., tab order, Enter/Space to activate buttons).
+
+### Keyboard Navigation
+
+- Ensure that interactive elements are focusable and usable with the keyboard (e.g., via the `tab` key).
+- Add `onKeyDown` handlers for important actions to support Enter or Space key activation.
 
 ### Virtualization
 
