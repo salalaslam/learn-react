@@ -40,11 +40,11 @@
 - Handle promise rejections in API calls and show user-friendly messages.
 - Log errors to the console or send them to a monitoring tool (e.g., Sentry).
 
-### Component Behavior
+### Improving Performance in React Components
 
-- Use `React.memo` for components that don't need to re-render on every state change.
-- Avoid inline functions in `render` methods to prevent unnecessary renders.
-- Clean up side effects using `useEffect` cleanup functions (e.g., clearing timers, unsubscribing).
+- Use `React.memo` or `PureComponent` to avoid unnecessary re-renders.
+- Memoize heavy computations or expensive function calls (e.g., using `useMemo`).
+- Avoid creating inline functions within JSX where possible (define them outside or use `useCallback`).
 
 ### Events and Interactions
 
@@ -450,13 +450,6 @@ const MyComponent = ({ t, name }) => {
 - Use semantic HTML (`<button>`, `<label>`, `<main>`, etc.) to ensure proper navigation for screen readers.
 - Add `aria-label` attributes to buttons, links, and icons without visible text.
 - Ensure keyboard navigation works seamlessly (e.g., tab order, Enter/Space to activate buttons).
-
-### Improving Performance in React Components
-
-- Use `React.memo` or `PureComponent` to avoid unnecessary re-renders.
-- Memoize heavy computations or expensive function calls (e.g., using `useMemo`).
-- Prefetch data or code-split components that are not immediately needed.
-- Avoid creating inline functions within JSX where possible (define them outside or use `useCallback`).
 
 ### Virtualization
 
