@@ -85,12 +85,6 @@ const price = 12.3456;
 console.log(roundToTwoPlaces(price)); // Output: 12.35
 ```
 
-### State Management
-
-- Keep local state minimal; avoid duplicating global state in local state.
-- Reset forms or component states after successful actions (e.g., clear input after submitting).
-- Use `useReducer` for complex state logic.
-
 ### Tooltips and Hints
 
 - Show tooltips or hints for non-obvious actions.
@@ -176,6 +170,12 @@ const handleSearch = debounce(query => fetchResults(query), 300);
 
 - Always destructure props and state for readability.
 - Use constants for repetitive strings or values to avoid typos.
+
+### State Management
+
+- Keep local state minimal; avoid duplicating global state in local state.
+- Reset forms or component states after successful actions (e.g., clear input after submitting).
+- Use `useReducer` for complex state logic.
 
 ### Accessibility (a11y)
 
