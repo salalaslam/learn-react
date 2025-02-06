@@ -94,10 +94,6 @@ console.log(roundToTwoPlaces(price)); // Output: 12.35
   - Revert back to "Copy" after a few seconds.
   - Use a state variable to manage the tooltip content dynamically.
 
-### Console Logs
-
-- Always remove all `console.log`, `console.error`, and `console.warn` statements before finalizing and deploying the code. Use a logging library for controlled logs in development and production if needed.
-
 ### Cleanup Effects
 
 - Ensure all subscriptions, event listeners, and intervals set in `useEffect` are **cleaned up** in the return function to prevent memory leaks.
@@ -243,6 +239,10 @@ useEffect(() => {
 ### Error Monitoring
 
 - Integrate an error tracking tool (e.g., Sentry) to capture errors in production for debugging and monitoring.
+
+### Console Logs
+
+- Always remove all `console.log`, `console.error`, and `console.warn` statements before finalizing and deploying the code. Use a logging library for controlled logs in development and production if needed.
 
 ### Mobile Responsiveness
 
