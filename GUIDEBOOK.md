@@ -458,7 +458,11 @@ const MyComponent = ({ t, name }) => {
 - Prefetch data or code-split components that are not immediately needed.
 - Avoid creating inline functions within JSX where possible (define them outside or use `useCallback`).
 - Use virtualization for large lists (e.g., `react-window` or `react-virtualized`).
+
+### Code Splitting
+
 - Only load necessary dependencies or assets for each route (code splitting).
+- Lazy-load components or routes that are not immediately needed.
 
 ### General Performance
 
