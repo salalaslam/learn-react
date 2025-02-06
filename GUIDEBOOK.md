@@ -68,6 +68,7 @@
 - Example:
 
 ```javascript
+<!-- prettier-ignore -->
 {(status === 'pending' || status === 'approved') ? <case1 /> : <case2 />}
 ```
 
