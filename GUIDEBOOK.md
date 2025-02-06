@@ -134,31 +134,11 @@ useEffect(() => {
 const handleSearch = debounce(query => fetchResults(query), 300);
 ```
 
-### Security Practices
+### Security Practices (Mandatory)
 
 - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
-- Use Content Security Policy (CSP) to prevent cross-site scripting (XSS) attacks.
-- Avoid using `eval()` and other similar functions that execute code from strings.
-- Use HTTPS to encrypt data in transit.
-- Implement proper authentication and authorization checks.
-- Regularly update dependencies to patch known vulnerabilities.
-- Use security linters and tools (e.g., ESLint plugins, Snyk) to identify and fix security issues.
-- Store sensitive information (e.g., tokens) securely and avoid exposing them in the frontend code.
-- Validate and sanitize API responses to prevent injection attacks.
 - Use environment variables for configuration and secrets, and never hardcode them in the codebase.
-- Implement rate limiting and throttling to prevent abuse of APIs.
-- Ensure proper error handling to avoid exposing stack traces or sensitive information.
-- **Advanced Security Concerns:**
-  - Use Subresource Integrity (SRI) to ensure that external resources have not been tampered with.
-  - Implement Content Security Policy (CSP) headers to restrict sources of content.
-  - Use HTTP security headers like `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, and `X-XSS-Protection`.
-  - Regularly audit and review third-party dependencies for security vulnerabilities.
-  - Use secure coding practices to prevent common vulnerabilities such as SQL injection, XSS, and CSRF.
-  - Ensure secure session management by using HttpOnly and Secure cookies.
-  - Monitor and log security events to detect and respond to potential security incidents.
-  - ~~Conduct regular security training and awareness programs for developers.~~
-  - Perform regular security assessments and penetration testing to identify and mitigate vulnerabilities.
-  - Use multi-factor authentication (MFA) for accessing sensitive parts of the application.
+- Ensure secure session management by using HttpOnly and Secure cookies.
 
 ## Chapter 2: Recommended Practices
 
@@ -443,6 +423,13 @@ const MyComponent = ({ t, name }) => {
 };
 ```
 
+### Security Practices (Recommended)
+
+- Use Content Security Policy (CSP) to prevent cross-site scripting (XSS) attacks.
+- Regularly update dependencies to patch known vulnerabilities.
+- Regularly audit and review third-party dependencies for security vulnerabilities.
+- Use security linters and tools (e.g., ESLint plugins, Snyk) to identify and fix security issues.
+
 ## Chapter 3: Optional (But Good to Have) Practices
 
 ### Accessibility (a11y)
@@ -468,6 +455,13 @@ const MyComponent = ({ t, name }) => {
 - Minify and bundle JavaScript and CSS files.
 - Use caching headers (e.g., Cache-Control) to leverage browser caching.
 - Lazy load non-critical resources to reduce initial load.
+
+### Security Practices (Optional)
+
+- Use secure coding practices to prevent common vulnerabilities such as SQL injection, XSS, and CSRF.
+- Monitor and log security events to detect and respond to potential security incidents.
+- Perform regular security assessments and penetration testing to identify and mitigate vulnerabilities.
+- Use multi-factor authentication (MFA) for accessing sensitive parts of the application.
 
 ---
 
