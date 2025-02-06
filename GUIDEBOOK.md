@@ -40,12 +40,6 @@
 - Handle promise rejections in API calls and show user-friendly messages.
 - Log errors to the console or send them to a monitoring tool (e.g., Sentry).
 
-### Accessibility (a11y)
-
-- Use semantic HTML (`<button>`, `<label>`, `<main>`, etc.) to ensure proper navigation for screen readers.
-- Add `aria-label` attributes to buttons, links, and icons without visible text.
-- Ensure keyboard navigation works seamlessly (e.g., tab order, Enter/Space to activate buttons).
-
 ### Component Behavior
 
 - Use `React.memo` for components that don't need to re-render on every state change.
@@ -172,6 +166,12 @@ const handleSearch = debounce(query => fetchResults(query), 300);
   - Use multi-factor authentication (MFA) for accessing sensitive parts of the application.
 
 ## Chapter 2: Recommended Practices
+
+### Accessibility (a11y)
+
+- Use semantic HTML (`<button>`, `<label>`, `<main>`, etc.) to ensure proper navigation for screen readers.
+- Add `aria-label` attributes to buttons, links, and icons without visible text.
+- Ensure keyboard navigation works seamlessly (e.g., tab order, Enter/Space to activate buttons).
 
 ### Error Messages
 
