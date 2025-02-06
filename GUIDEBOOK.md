@@ -459,7 +459,6 @@ const MyComponent = ({ t, name }) => {
 - Avoid creating inline functions within JSX where possible (define them outside or use `useCallback`).
 - Use virtualization for large lists (e.g., `react-window` or `react-virtualized`).
 - Only load necessary dependencies or assets for each route (code splitting).
-- Make sure to keep component state minimal to reduce re-renders.
 
 ### General Performance
 
