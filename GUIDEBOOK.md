@@ -134,6 +134,20 @@ useEffect(() => {
 const handleSearch = debounce(query => fetchResults(query), 300);
 ```
 
+### Image Handling
+
+- Always provide an `alt` attribute for images to ensure accessibility.
+- Use a fallback image for broken or missing image URLs.
+- Example:
+
+```javascript
+<img
+  src={imageUrl || fallbackUrl}
+  alt='Profile'
+  onError={e => (e.target.src = fallbackUrl)}
+/>
+```
+
 ### Security Practices (Mandatory)
 
 - Always sanitize user inputs, especially if rendering HTML (e.g., using `react-html-parser`).
@@ -157,20 +171,6 @@ const handleSearch = debounce(query => fetchResults(query), 300);
 
 - Show **specific and actionable error messages** instead of generic ones (e.g., “Email is required” instead of “Invalid input”).
 - Use toast notifications or inline error indicators for better UX.
-
-### Image Handling
-
-- Always provide an `alt` attribute for images to ensure accessibility.
-- Use a fallback image for broken or missing image URLs.
-- Example:
-
-```javascript
-<img
-  src={imageUrl || fallbackUrl}
-  alt='Profile'
-  onError={e => (e.target.src = fallbackUrl)}
-/>
-```
 
 ### Code Comments
 
