@@ -67,10 +67,11 @@
 - Always wrap the `||` operator in parentheses when using with the ternary operator to ensure correct evaluation order and readability. This helps to avoid issues with operator precedence, where the `||` operator might be evaluated before the ternary operator.
 - Example:
 
+<!-- prettier-ignore-start -->
 ```javascript
-<!-- prettier-ignore -->
 {(status === 'pending' || status === 'approved') ? <case1 /> : <case2 />}
 ```
+<!-- prettier-ignore-end -->
 
 - Always round decimals to two places for consistency and readability.
 - Example:
