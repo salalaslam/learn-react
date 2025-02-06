@@ -449,7 +449,7 @@ const MyComponent = ({ t, name }) => {
 };
 ```
 
-## Chapter 3: Advanced Practices
+## Chapter 3: Optional (But Good to Have) Practices
 
 ### Improving Performance in React Components
 
