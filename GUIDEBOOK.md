@@ -177,12 +177,6 @@ const handleSearch = debounce(query => fetchResults(query), 300);
 - Reset forms or component states after successful actions (e.g., clear input after submitting).
 - Use `useReducer` for complex state logic.
 
-### Accessibility (a11y)
-
-- Use semantic HTML (`<button>`, `<label>`, `<main>`, etc.) to ensure proper navigation for screen readers.
-- Add `aria-label` attributes to buttons, links, and icons without visible text.
-- Ensure keyboard navigation works seamlessly (e.g., tab order, Enter/Space to activate buttons).
-
 ### Error Messages
 
 - Show **specific and actionable error messages** instead of generic ones (e.g., “Email is required” instead of “Invalid input”).
@@ -450,6 +444,12 @@ const MyComponent = ({ t, name }) => {
 ```
 
 ## Chapter 3: Optional (But Good to Have) Practices
+
+### Accessibility (a11y)
+
+- Use semantic HTML (`<button>`, `<label>`, `<main>`, etc.) to ensure proper navigation for screen readers.
+- Add `aria-label` attributes to buttons, links, and icons without visible text.
+- Ensure keyboard navigation works seamlessly (e.g., tab order, Enter/Space to activate buttons).
 
 ### Improving Performance in React Components
 
